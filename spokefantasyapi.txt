@@ -1,0 +1,146 @@
+openapi: 3.0.0
+info:
+  title: Spoke Fantasy World APIs
+  version: 1.0.0
+  description: APIs for accessing various functionalities in the Spoke Fantasy World, where most magical elements are powered by robots and technology.
+
+paths:
+  /menu:
+    get:
+      summary: Get Menu
+      description: Retrieve the menu of available food items in the fantasy world.
+      responses:
+        "200":
+          description: A list of menu items.
+          content:
+            application/json:
+              example: |
+                [
+                  {
+                    "item_id": 1,
+                    "name": "Dragon Steak",
+                    "price": 25,
+                    "description": "Juicy steak from the legendary fire-breathing dragons, prepared by culinary robots."
+                  },
+                  {
+                    "item_id": 2,
+                    "name": "Elven Salad",
+                    "price": 15,
+                    "description": "Fresh salad made with magical herbs and elven vegetables, grown and harvested by agricultural robots."
+                  }
+                ]
+
+  /recipes:
+    get:
+      summary: Get Recipes
+      description: Retrieve recipes for cooking fantasy dishes.
+      responses:
+        "200":
+          description: A list of recipes.
+          content:
+            application/json:
+              example: |
+                [
+                  {
+                    "recipe_id": 1,
+                    "name": "Phoenix Wings",
+                    "ingredients": ["Phoenix Feathers", "Dragon Spice Blend", "Fairy Dust"],
+                    "instructions": "Marinate phoenix feathers in dragon spice blend and fairy dust. Grill until golden brown. Recipe executed by culinary robots."
+                  },
+                  {
+                    "recipe_id": 2,
+                    "name": "Mermaid Sushi",
+                    "ingredients": ["Mermaid Scales", "Sea Urchin Roe", "Magic Seaweed"],
+                    "instructions": "Wrap mermaid scales and sea urchin roe in magic seaweed. Serve chilled. Recipe prepared by sushi-making robots."
+                  }
+                ]
+
+  /map:
+    get:
+      summary: Get Map
+      description: Retrieve a map of the fantasy world.
+      responses:
+        "200":
+          description: A map image.
+          content:
+            image/png:
+              example: |
+                (PNG image)
+
+  /test/air-pollution:
+    get:
+      summary: Test Air Pollution
+      description: Check the air pollution levels in the fantasy world.
+      responses:
+        "200":
+          description: Air pollution measurement.
+          content:
+            application/json:
+              example: |
+                {
+                  "pollution_level": "Moderate",
+                  "recommendation": "Use robotic air-cleaning systems or summon air-cleaning drones."
+                }
+
+  /test/water-pollution:
+    get:
+      summary: Test Water Pollution
+      description: Check the water pollution levels in the fantasy world.
+      responses:
+        "200":
+          description: Water pollution measurement.
+          content:
+            application/json:
+              example: |
+                {
+                  "pollution_level": "High",
+                  "recommendation": "Deploy robotic water-cleaning machines or consult water-purification robots for purification processes."
+                }
+
+  /operate/air-cleaning-dragons:
+    post:
+      summary: Operate Air Cleaning Drones
+      description: Summon and command air-cleaning drones to purify the air.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                drone_type:
+                  type: string
+                  description: Type of air-cleaning drone to summon (e.g., Fire Drone, Wind Drone).
+      responses:
+        "200":
+          description: Successful operation of air-cleaning drones.
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Air-cleaning drones successfully summoned and deployed."
+                }
+
+  /operate/water-cleaning-machines:
+    post:
+      summary: Operate Water Cleaning Machines
+      description: Activate water-cleaning machines to purify contaminated water sources.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                machine_id:
+                  type: integer
+                  description: Identifier of the water-cleaning machine.
+      responses:
+        "200":
+          description: Successful operation of water-cleaning machines.
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Water-cleaning machines successfully activated and initiated purification process."
+                }
