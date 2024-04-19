@@ -3,7 +3,18 @@ info:
   title: Spoke Fantasy World APIs
   version: 1.0.0
   description: APIs for accessing various functionalities in the Spoke Fantasy World, where most magical elements are powered by robots and technology.
+servers:
 
+url: https://fantasyworldapi.com
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+
+security:
+
+basicAuth: []
 paths:
   /menu:
     get:
